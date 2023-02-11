@@ -30,14 +30,15 @@ for x in c:
     y_input.append(x)
     m = timeit.timeit(lambda : func(x))
     x_input_old.append(m)
+
+for mo in c: 
     p = timeit.timeit(lambda : funcnew(x))
-    x_input_new.append(m)
+    dict_fun.clear()
+    x_input_new.append(p)
 
 plt.plot(x_input_new, y_input, label = "modified function") 
 plt.plot(x_input_old, y_input, label = "original function")
 plt.xlabel("Time taken")
 plt.ylabel("value of n ")
-plt.title()
 plt.legend()
-
-    
+plt.show()
